@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecionar para o Admin</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Acessar a área de administração do sistema</h1>
+    <p>Clique no botão abaixo para acessar o painel de administração do Django.</p>
+    
+    <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="btn btn-primary">Acessar o Admin do Django</a>
+</div>
+
+</body>
+</html>

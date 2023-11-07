@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissão de Certificados de TI Básico</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+</head>
+
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Emissão de Certificados de TI Básico</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container mt-4">
+        <h1>Emissão de Certificados de TI Básico</h1>
+        <form action="{% url 'gerar_certificado' %}" method="get">
+            <div class="mb-3">
+                <label for="nomeAluno" class="form-label">Nome do Aluno</label>
+                <input type="text" name="nomeAluno" class="form-control" id="nomeAluno" required>
+            </div>
+            <div class="mb-3">
+                <label for="nomeCurso" class="form-label">Nome do Curso</label>
+                <input type="text" name="nomeCurso" class="form-control" id="nomeCurso" required>
+            </div>
+            <div class="mb-3">
+                <label for="dataConclusao" class="form-label">Data de Conclusão</label>
+                <input type="date" name="dataConclusao" class="form-control" id="dataConclusao" required>
+            </div>
+            <div class="mb-3">
+                <label for="coordenadorFaculdade" class="form-label">Nome da Coordenadora da Faculdade</label>
+                <input type="text" name="coordenadorFaculdade" class="form-control" id="coordenadorFaculdade" required>
+            </div>
+            <div class="mb-3">
+                <label for="coordenadorColegio" class="form-label">Nome da Coordenadora do Colégio</label>
+                <input type="text" name="coordenadorColegio" class="form-control" id="coordenadorColegio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Emitir Certificado</button>
+            
+        </form>
+    </div>
+
+
+</html>

@@ -33,11 +33,10 @@ class Certificado(Aluno):
 
 class Administrador(models.Model):
     nome = models.CharField(blank = False)
-    matricula = models.CharField(blank = False)
     senha = models.FloatField( blank = False )
 
     def __str__(self):
-        return f"{self.nome},{self.matricula},{self.senha}"
+        return f"{self.nome},{self.senha}"
 
 
 

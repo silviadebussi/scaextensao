@@ -1,1 +1,55 @@
-<h1> oii </h1>1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle Acadêmico</title>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+      </head>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Controle Acadêmico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="alunos.html">Alunos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aulas.html">Aulas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="presencas.html">Presenças</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certificados.html">Certificados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="administradores.html">Administradores</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho -->
+    <header class="container mt-4">
+        <h1>Bem-vindo ao Sistema de Controle Acadêmico do colégio Antônio Carlos</h1>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container mt-4">
+        <p>Este é o conteúdo principal do sistema de controle acadêmico. Você pode personalizá-lo de acordo com suas necessidades.</p>
+    </div>
+
+</body>
+</html>
