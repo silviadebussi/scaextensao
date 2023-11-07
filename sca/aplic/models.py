@@ -8,12 +8,18 @@ class Aluno(models.Model):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        verbose_name_plural = "Alunos"
+
 class Aula(models.Model):
     nome = models.CharField(max_length=30, blank=False)
     data = models.DateField()
 
     def __str__(self):
         return self.nome
+
+    class Meta:
+        verbose_name_plural = "Aulas"
 
 class Presenca(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
@@ -23,25 +29,26 @@ class Presenca(models.Model):
     def __str__(self):
         return f"{self.aluno.nome} - {self.aula.nome} - Faltas: {self.faltas}"
 
-class Certificado(Aluno):
-    nome_coordenador_faculdade = models.CharField(blank = False)
-    nome_coordenador_colegio = models.CharField( blank = False)
-    nome_aula = models.ForeignKey('Aula',on_delete = models.CASCADE)
+    class Meta:
+        verbose_name_plural = "Presenças"
+
+class Certificado(models.Model):
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    nome_coordenador_faculdade = models.CharField(blank=False)
+    nome_coordenador_colegio = models.CharField(blank=False)
 
     def __str__(self):
-        return f"{self.nome_coordenador_faculdade}, {nome_coordenador_colegio}"
+        return f"{self.nome_coordenador_faculdade}, {self.nome_coordenador_colegio}"
+    class Meta:
+        verbose_name_plural = "Certificados"
 
 class Administrador(models.Model):
-    nome = models.CharField(blank = False)
-    senha = models.FloatField( blank = False )
+    nome = models.CharField(blank=False)
+    senha = models.FloatField(blank=False)
 
     def __str__(self):
         return f"{self.nome},{self.senha}"
 
+    class Meta:
+        verbose_name_plural = "Administradores"
 
-
-
-
-
-
-# Create your models here.
