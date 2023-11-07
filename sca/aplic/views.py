@@ -30,6 +30,9 @@ class AlunosView(TemplateView):
 class PresencasView(TemplateView):
     template_name = 'presencas.html'
 
+class Sucesso_registroView(TemplateView):
+    template_name = 'sucesso_registro.html'
+
 
 def gerar_certificado(request):
     response = HttpResponse(content_type='application/pdf')
@@ -60,33 +63,28 @@ def registrar_aluno(request):
     if request.method == 'POST':
         form = AlunoForm(request.POST)
         if form.is_valid():
-            # Crie uma instância de Aluno com os dados do formulário
             novo_aluno = form.save()
-            # Redirecione para uma página de sucesso ou outra ação desejada
-            return redirect('sucesso_registro')  # Redireciona para uma página de sucesso, se desejar
+            return redirect('sucesso_registro')
+    
     else:
         form = AlunoForm()
     
     return render(request, 'alunos.html', {'form': form})
+    
+  
 
-def registrar_aluno(request):
-    if request.method == 'POST':
-        form = AlunoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            
-    else:
-        form = AlunoForm()
-
-    return render(request, 'alunos.html', {'form': form})
 
 def registrar_presenca(request):
     if request.method == 'POST':
         form = PresencaForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('sucesso_registro')
+    
+
     else:
        form = PresencaForm()
 
     return render(request, 'presencas.html', {'form': form})
-   
+    return redirect('sucesso_registro')
+

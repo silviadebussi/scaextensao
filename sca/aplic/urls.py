@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import IndexView, CertificadosView, gerar_certificado, AdministradoresView, PresencasView, AulasView, AlunosView, registrar_aluno, registrar_presenca
+from .views import IndexView, CertificadosView, gerar_certificado, AdministradoresView, PresencasView, AulasView, AlunosView, registrar_aluno, registrar_presenca, Sucesso_registroView
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
@@ -11,5 +11,6 @@ urlpatterns = [
     path("alunos.html", AlunosView.as_view(), name="administradores"),
     path("presencas.html", PresencasView.as_view(), name="administradores"),
     path('registrar_aluno/', registrar_aluno, name='registrar_aluno'),
-    path('registrar_presenca/', registrar_presenca, name='registrar_presenca')
+    path('registrar_presenca/', registrar_presenca, name='registrar_presenca'),
+    path('sucesso_registro.html', Sucesso_registroView.as_view(), name='sucesso_registro')
 ]
