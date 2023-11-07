@@ -12,13 +12,28 @@
 
 <div class="container mt-5">
     <h1 class="mb-4">
-        Registro de Alunos 
+        Registro de Alunos
     </h1>
 
-    <form method="post" action="{% url 'registrar_aluno' %}">
+    <form method="post" action="{% url 'registrar_aluno' %}" class="needs-validation" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
-
+        <div class="mb-3">
+            {{ form.nome.label_tag }}
+            {{ form.nome }}
+        </div>
+        <div class="mb-3">
+            {{ form.sobrenome.label_tag }}
+            {{ form.sobrenome }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.sala.label_tag }}
+            {{ form.sala }}
+        </div>
+        
         <button type="submit" class="btn btn-primary">Registrar Aluno</button>
     </form>
 </div>
