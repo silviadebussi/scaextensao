@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emissão de Certificados de TI Básico</title>
+
         {% load bootstrap5 %}
         {% bootstrap_css %}
         {% bootstrap_javascript %}
@@ -15,7 +16,13 @@
         <div class="container">
             <a class="navbar-brand" href="#">Emissão de Certificados de TI Básico</a>
         </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                </li>
     </nav>
+    
 
     <!-- Conteúdo Principal -->
     <div class="container mt-4">

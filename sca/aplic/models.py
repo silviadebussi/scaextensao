@@ -16,6 +16,7 @@ class Aula(models.Model):
     data = models.DateField()
     descricao = models.CharField(max_length=30,blank=True)
 
+
     def __str__(self):
         return self.nome
 

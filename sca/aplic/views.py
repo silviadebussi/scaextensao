@@ -12,7 +12,7 @@ from .forms import PresencaForm
 from .models import Aula
 from .forms import AulaForm
 from django.urls import reverse
-
+from django.shortcuts import render, redirect
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -96,10 +96,12 @@ def registrar_aula(request):
         form = AulaForm(request.POST)
         if form.is_valid():
             form.save()
-            # Use o nome da URL em vez do arquivo HTML
-            return redirect(reverse('sucesso_registro'))
+            return redirect('aulas')  # Redirecione para a página de exibição das aulas
     else:
         form = AulaForm()
 
     aulas = Aula.objects.all()
     return render(request, 'aulas.html', {'form': form, 'aulas': aulas})
+
+
+   

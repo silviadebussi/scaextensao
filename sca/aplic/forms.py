@@ -19,3 +19,4 @@ class AulaForm(forms.ModelForm):
     class Meta:
         model = Aula
         fields = ['nome', 'descricao','data']
+
