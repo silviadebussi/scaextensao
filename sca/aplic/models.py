@@ -14,6 +14,7 @@ class Aluno(models.Model):
 class Aula(models.Model):
     nome = models.CharField(max_length=30, blank=False)
     data = models.DateField()
+    descricao = models.CharField(max_length=30,blank=True)
 
     def __str__(self):
         return self.nome
@@ -51,4 +52,3 @@ class Administrador(models.Model):
 
     class Meta:
         verbose_name_plural = "Administradores"
-

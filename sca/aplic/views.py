@@ -9,6 +9,9 @@ from django.shortcuts import render, redirect
 from .forms import AlunoForm  # Importe o formulário AlunoForm
 from .models import Aluno 
 from .forms import PresencaForm
+from .models import Aula
+from .forms import AulaForm
+from django.urls import reverse
 
 
 # Create your views here.
@@ -88,3 +91,15 @@ def registrar_presenca(request):
     return render(request, 'presencas.html', {'form': form})
     return redirect('sucesso_registro')
 
+def registrar_aula(request):
+    if request.method == 'POST':
+        form = AulaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Use o nome da URL em vez do arquivo HTML
+            return redirect(reverse('sucesso_registro'))
+    else:
+        form = AulaForm()
+
+    aulas = Aula.objects.all()
+    return render(request, 'aulas.html', {'form': form, 'aulas': aulas})

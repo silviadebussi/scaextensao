@@ -13,25 +13,35 @@
 <div class="container mt-5">
     <h1 class="mb-4">Aulas do Curso</h1>
 
+    <!-- Adição de Aulas -->
+    <form method="post" action="{% url 'registrar_aula' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título da Aula:</label>
+            <input type="text" name="nome" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição da Aula:</label>
+            <textarea name="descricao" class="form-control" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="data" class="form-label">Data da Aula:</label>
+            <input type="date" name="data" class="form-control" required>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Adicionar Aula</button>
+    </form>
+
     <!-- Lista de Aulas -->
-    <ul class="list-group">
-        <li class="list-group-item">
-            <h3>Aula 1: Introdução ao Curso</h3>
-            <p>Descrição da primeira aula...</p>
-        </li>
-        <li class="list-group-item">
-            <h3>Aula 2: Tópico 2</h3>
-            <p>Descrição da segunda aula...</p>
-        </li>
-        <li class="list-group-item">
-            <h3>Aula 3: Tópico 3</h3>
-            <p>Descrição da terceira aula...</p>
-        </li>
+    <ul class="list-group mt-4">
+        {% for aula in aulas %}
+            <li class="list-group-item">
+                <h3>{{ aula.nome }}</h3>
+                <p>{{ aula.descricao }}</p>
+            </li>
+        {% endfor %}
     </ul>
 </div>
 
 </body>
 </html>
-
-
-   

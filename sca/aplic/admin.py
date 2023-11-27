@@ -6,5 +6,3 @@ admin.site.register(Aluno)
 admin.site.register(Aula)
 admin.site.register(Presenca)
 admin.site.register(Administrador)
-
-# Register your models here.
