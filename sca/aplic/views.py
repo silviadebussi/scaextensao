@@ -6,7 +6,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .forms import AlunoForm  # Importe o formulário AlunoForm
+from .forms import AlunoForm 
 from .models import Aluno 
 from .forms import PresencaForm
 from .models import Aula
@@ -16,7 +16,7 @@ from django.shortcuts import render, redirect
 from io import BytesIO
 from reportlab.lib import colors
 
-# Create your views here.
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
@@ -44,14 +44,13 @@ class SobreView(TemplateView):
 def gerar_certificado(request):
     buffer = BytesIO()
 
-    # Criar o PDF no buffer
     p = canvas.Canvas(buffer, pagesize=letter)
-    p.setFont("Helvetica-Bold", 30)  # Fonte e tamanho do título
-    p.setLineWidth(8)  # Largura da linha da borda
+    p.setFont("Helvetica-Bold", 30) 
+    p.setLineWidth(8) 
 
-    # Título do certificado (na parte superior)
+    
     p.drawString(100, 750, "Certificado de Conclusão")
-    p.setFont("Helvetica-Bold", 18)  # Reduzir o tamanho da fonte
+    p.setFont("Helvetica-Bold", 18)  
     p.drawString(150, 715, "Curso de TI Básico")
     p.setFont("Helvetica", 15) 
     p.drawString(100, 530, f"Nome do Aluno: {request.GET.get('nomeAluno')}")
@@ -64,7 +63,6 @@ def gerar_certificado(request):
     p.showPage()
     p.save()
 
-    # Retorne o buffer com o conteúdo do PDF
     buffer.seek(0)
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="certificado.pdf"'
@@ -104,7 +102,6 @@ def registrar_aula(request):
         form = AulaForm(request.POST)
         if form.is_valid():
             form.save()
-            # Redirect to the same page to display the updated list of aulas
             return redirect('registrar_aula')
     else:
         form = AulaForm()
