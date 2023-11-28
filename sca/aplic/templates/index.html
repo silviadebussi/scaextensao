@@ -9,7 +9,54 @@
         {% load bootstrap5 %}
         {% bootstrap_css %}
         {% bootstrap_javascript %}
+        {% load static %}
       </head>
+      <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .container mt-4 {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: grey;
+        }
+
+        .container mt-4 p {
+            margin-bottom: 20px;
+        }
+
+        .container mt-4 strong {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
 </head>
 <body>
     <!-- Menu de Navegação -->
@@ -21,6 +68,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html"> Sobre a equipe</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="alunos.html">Alunos</a>
                     </li>
@@ -59,7 +109,53 @@
             sendo realizado ao cenário da informática, lhes passando conteúdos dos mais básicos 
             para que aprendam a operar um computador como uma ferramenta de 
             desenvolvimento pessoal e profissional.</strong></p>
+
+
+
+           <strong> O presente trabalho é fundado em uma de suas abordagens o estudo de caso, que 
+            considera como uma investigação empírica que compreende um método 
+            abrangente, com coleta e análise de dados. Não obstante, adotado na produção 
+            também o estudo etnográfico e bibliográfico, em complemento ao estudo de teoria 
+            fundamentada, pode ser compreendido como teoria baseada em dados que ao se 
+            juntar a outras teorias de estudo gera um conhecimento novo, apresenta uma 
+            relevância ao fenômeno pesquisado, problematizado. Isto é, uma ótica estimulada 
+            sobre um determinado assunto, grupo ou ação no ambiente. </strong>
+
+            <br>
+            <br>
+
+            <h1>Atividades Realizadas</h1>
+
+            <strong> 
+                Foram realizadas diversas atividades tais como palestras, rodas de conversas sobre 
+                temas pertinentes a formação qualitativa dos educandos. Até o momento as 
+                atividades realizadas demonstraram um grande avanço e reflexão no pensamento 
+                dos jovens. Gerou participação ativa de toda comunidade escolar, os funcionários e 
+                alunos demonstraram muito interesse com as ações realizadas. 
+                <br>
+                <strong>Resultados obtidos:</strong> 
+                <br>
+                Através dos estudos e das pesquisas realizadas foram obtidos resultados que 
+                permitiram ter embasamento teórico para formação na perspectiva de qualidade de 
+                cada universitário em seu curso, a interação e troca de vivências nos processos de 
+                atuação do presente projeto estimulou produtivas reflexões de vida dos discentes, 
+                também, problematizou a relação com a sociedade, o comprometimento com o 
+                futuro e de onde partir, para então saber onde se quer chegar; o projeto consegue 
+                auxiliar na melhoria do conhecimento educacional, social e humanitário de todos os 
+                agentes envolvidos no espaço escolar. Desse modo, as interações foram 
+                respeitosas, afetivas e produtivas.</strong>
+
+
+                <br>
+                <br>
+
+                <div class="Extensao-logo">
+                    <img src="{% static 'imagens/10966713.jpg' %}" alt="">
+                </div>
+
     </div>
+
+
 
 </body>
 </html>

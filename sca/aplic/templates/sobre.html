@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: rgb(87, 87, 187) !important;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            color: white !important;
+        }
+
+        .nav-item {
+            font-size: 24px;
+            color: white !important;
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px; 
+        }
+
+        .Extensao-logo {
+            width: 48%; 
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .Extensao-logo img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            height: 80%;
+        }
+
+        .Extensao-logo:hover img {
+            transform: scale(1.1);
+        }
+
+        .descricao {
+            width: 48%; 
+            box-sizing: border-box;
+            font-size: 18px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .descricao:last-child {
+            margin-bottom: 0; 
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+    </style>
+    <title>Sobre nós</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container1">
+            <a class="navbar-brand" href="#">Sobre a equipe</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                </li>
+    </nav>
+
+    <div class="container2">
+        <div class="Extensao-logo">
+            <img src="{% static 'imagens/FOTO_EXTENSAO4.jpg' %}" alt="">
+        </div>
+        <div class="descricao">
+
+
+            <p>O presente trabalho é fundado em uma de suas abordagens o estudo de caso, que 
+                considera como uma investigação empírica que compreende um método 
+                abrangente, com coleta e análise de dados. Não obstante, adotado na produção 
+                também o estudo etnográfico e bibliográfico, em complemento ao estudo de teoria 
+                fundamentada, pode ser compreendido como teoria baseada em dados que ao se 
+                juntar a outras teorias de estudo gera um conhecimento novo, apresenta uma 
+                relevância ao fenômeno pesquisado, problematizado. Isto é, uma ótica estimulada 
+                sobre um determinado assunto, grupo ou ação no ambiente.
+                </p>
+
+            <p>Aula ministrada no Colégio Antônio Carlos com o intuito de transmitir aos alunos conceitos relativos aos tipos de memórias de computadores.</p>
+        </div>
+
+        <div class="Extensao-logo">
+            <img src="{% static 'imagens/FOTO_EXTENSAO3.jpg' %}" alt="">
+        </div>
+        <div class="descricao">
+            
+            <p>Inicialmente, o projeto começou com a construção do grupo e busca por um tema 
+                relevante e convidativo para todos os cursos. Visto a necessidade de pensar na 
+                escola como um espaço de formação não apenas programada nos conteúdos 
+                escolares, mas também, para vida em sociedade, diante de pesquisas bibliográfica 
+                para enriquecimento da ideia prematura, surge o tema escolhido – educação na 
+                perspectiva qualitativa, as esferas e abordagens preparatórias para a vida pós 
+                ensino e consequentemente o público-alvo: adolescentes em sua fase do ensino 
+                médio. Foram realizadas reuniões com a instituição parceria para compreensão das 
+                demandas e execução das atividades, estipulado um cronograma de atuação para 
+                o primeiro e segundo períodos do ano de 2023.</p>
+
+            <p>Realização de monitoria das atividades realizadas propostas durante a aula e apoio aos alunos.</p>
+        </div>
+
+        <div class="Extensao-logo">
+            <img src="{% static 'imagens/FOTO_EXTENSAO2.jpg' %}" alt="">
+        </div>
+        <div class="descricao">
+            <p>Reunião dos integrantes da equipe para feedback do andamento do projeto</p>
+            <p> Para o desenvolvimento do projeto emparelhou-se uma parceria com a Escola 
+                Estadual Antônio Carlos. (Juiz de Fora- MG). Firmada de maneira bem projetada e 
+                deseja pela instituição e os universitários.</p>
+        </div>
+
+        <div class="Extensao-logo">
+            <img src="{% static 'imagens/FOTO_EXTENSAO1.jpg' %}" alt="">
+        </div>
+        <div class="descricao">
+            <p>Divulgação do Instagram do projeto "Foguete Não Tem Ré", realizado na matéria de Extensão Universitária.</p>
+        </div>
+    </div>
+</body>
+</html>

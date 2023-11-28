@@ -13,6 +13,8 @@ from .models import Aula
 from .forms import AulaForm
 from django.urls import reverse
 from django.shortcuts import render, redirect
+from io import BytesIO
+from reportlab.lib import colors
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -36,14 +38,15 @@ class PresencasView(TemplateView):
 class Sucesso_registroView(TemplateView):
     template_name = 'sucesso_registro.html'
 
+class SobreView(TemplateView):
+    template_name = 'sobre.html'
 
 def gerar_certificado(request):
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="certificado.pdf"'
-  
-    p = canvas.Canvas(response, pagesize=letter)
-    p.setFillColorRGB(0, 0, 0)  # Cor do texto (preto)
-    p.setFont("Helvetica-Bold", 24)  # Fonte e tamanho do título
+    buffer = BytesIO()
+
+    # Criar o PDF no buffer
+    p = canvas.Canvas(buffer, pagesize=letter)
+    p.setFont("Helvetica-Bold", 30)  # Fonte e tamanho do título
     p.setLineWidth(8)  # Largura da linha da borda
 
     # Título do certificado (na parte superior)
@@ -60,8 +63,13 @@ def gerar_certificado(request):
 
     p.showPage()
     p.save()
-    return response
 
+    # Retorne o buffer com o conteúdo do PDF
+    buffer.seek(0)
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="certificado.pdf"'
+    response.write(buffer.read())
+    return response
 def registrar_aluno(request):
     if request.method == 'POST':
         form = AlunoForm(request.POST)

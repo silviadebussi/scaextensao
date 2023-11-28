@@ -5,9 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emissão de Certificados de TI Básico</title>
 
-        {% load bootstrap5 %}
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,11 +67,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
                 </li>
+            </ul>
+        </div>
     </nav>
-    
 
     <!-- Conteúdo Principal -->
-    <div class="container mt-4">
+    <div class="container">
         <h1>Emissão de Certificados de TI Básico</h1>
         <form action="{% url 'gerar_certificado' %}" method="get">
             <div class="mb-3">
@@ -49,9 +96,8 @@
                 <input type="text" name="coordenadorColegio" class="form-control" id="coordenadorColegio" required>
             </div>
             <button type="submit" class="btn btn-primary">Emitir Certificado</button>
-            
         </form>
     </div>
-
+</body>
 
 </html>

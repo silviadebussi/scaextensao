@@ -5,6 +5,7 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    {% load static %}
 </head>
 <body>
 
@@ -25,6 +26,12 @@
     <p>Clique no botão abaixo para acessar o painel de administração do Django.</p>
     
     <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="btn btn-primary">Acessar o Admin do Django</a>
+
+  
+    <div class="Extensao-logo">
+        <img src="{% static 'imagens/adm.jpg' %}" alt="">
+    </div>
+
 </div>
 
 </body>
