@@ -96,12 +96,12 @@ def registrar_aula(request):
         form = AulaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('aulas')  # Redirecione para a página de exibição das aulas
+            # Redireciona para a mesma página após salvar a aula
+            return redirect('registrar_aula')
     else:
         form = AulaForm()
 
     aulas = Aula.objects.all()
     return render(request, 'aulas.html', {'form': form, 'aulas': aulas})
-
 
    

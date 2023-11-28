@@ -6,11 +6,24 @@
     {% bootstrap_javascript %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas do Curso</title>
+
 </head>
 <body>
 
 <div class="container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aulas ministradas</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                </li>
+    </nav>
+    
+
+
     <h1 class="mb-4">Aulas do Curso</h1>
 
     <!-- Adição de Aulas -->
@@ -38,6 +51,7 @@
             <li class="list-group-item">
                 <h3>{{ aula.nome }}</h3>
                 <p>{{ aula.descricao }}</p>
+                <p>Data da Aula: {{ aula.data }}</p>
             </li>
         {% endfor %}
     </ul>
